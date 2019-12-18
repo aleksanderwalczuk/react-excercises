@@ -3,13 +3,18 @@ import ReactDOM from "react-dom";
 import "./index.sass";
 import * as serviceWorker from "./serviceWorker";
 
+const TweetTime = () => <time>18th December</time>;
+const TweetUser = () => (
+  <span>
+    <strong>Aleksander Walczuk</strong>@contact.pl - 
+  </span>
+)
 class Tweet extends React.Component {
   render() {
-    const date = new Date().toString();
     return (
       <div>
-        <strong>Aleksander Walczuk</strong>@contact.pl -<time>{date}</time>
-        <p>Hello world!</p>
+        <TweetUser/>
+        <TweetTime/>
       </div>
     );
   }
