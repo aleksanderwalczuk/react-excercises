@@ -1,22 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.sass';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.sass";
+import * as serviceWorker from "./serviceWorker";
 
-const Tweet = () => (
-  <div>
-    <strong>Aleksander Walczuk</strong>@contact.pl - 
-    <time>{(new Date()).toString()}</time>
-    <p>
-      Hello world!
-    </p>
-  </div>
-)
+class Tweet extends React.Component {
+  render() {
+    const date = (new Date()).toString();
+    return (
+      <div>
+        <strong>Aleksander Walczuk</strong>@contact.pl -
+        <time>{date}</time>
+        <p>Hello world!</p>
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(
-  <Tweet />
-, document.getElementById('root'))
-
+ReactDOM.render(<Tweet />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
