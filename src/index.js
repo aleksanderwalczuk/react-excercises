@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import ReactDOM from "react-dom";
 import "./index.sass";
 import * as serviceWorker from "./serviceWorker";
@@ -62,11 +62,11 @@ class Tweet extends React.Component {
     const { user, text, date } = this.props.tweet;
 
     return (
-      <div>
+      <Fragment>
         <TweetUser name={user.name} />
         <TweetTime date={date} />
         <p>{text}</p>
-      </div>
+      </Fragment>
     );
   }
 }
@@ -84,11 +84,11 @@ Tweet.propTypes = {
 
 const TweetList = ({ tweets }) => {
   return (
-    <div>
+    <Fragment>
       {tweets.map(item => (
         <Tweet tweet={item} key={item.id} />
       ))}
-    </div>
+    </Fragment>
   );
 };
 TweetList.propTypes = {
