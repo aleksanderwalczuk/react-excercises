@@ -50,6 +50,17 @@ class Tweet extends React.Component {
   }
 }
 
+Tweet.propTypes = {
+  tweet: PropTypes.shape({
+    user: PropTypes.shape({
+      handle: PropTypes.string.isRequired,
+      name: PropTypes.string
+    }),
+    date: PropTypes.instanceOf(Date).isRequired,
+    text: PropTypes.string.isRequired
+  })
+}
+
 ReactDOM.render(
   <div>
     <Tweet tweet={TweetData} />
