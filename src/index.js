@@ -61,11 +61,23 @@ Tweet.propTypes = {
   })
 }
 
-ReactDOM.render(
-  <div>
+const TweetList = () => {
+  const tweets = [
+    <Tweet tweet={TweetData} />,
+    <Tweet tweet={TweetData} />,
     <Tweet tweet={TweetData} />
-  </div>,
-  document.getElementById("root")
+    
+  ]
+  return (
+    <div>
+      {tweets}
+    </div>
+  )
+}
+
+ReactDOM.render(
+    <TweetList/>
+  ,document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
