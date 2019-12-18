@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.sass";
 import * as serviceWorker from "./serviceWorker";
+import PropTypes from 'prop-types'
 
 const TweetData = {
   user: {
@@ -17,11 +18,23 @@ const TweetTime = props => {
    ${props.date.toLocaleString("pl-pl", { month: "long" })}`;
   return <time>{date}</time>;
 };
+
+TweetTime.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired
+}
 const TweetUser = ({ name, handle }) => (
   <span>
     <strong>{name}</strong>@{handle}
   </span>
 );
+
+TweetUser.propTypes = {
+  handle: PropTypes.string.isRequired,
+  name: PropTypes.string
+};
+TweetUser.defaultProps = {
+  name: 'Anonymous'
+}
 
 class Tweet extends React.Component {
   render() {
