@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.sass';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+const Tweet = () => (
   <div>
-    <strong>Aleksadner Walczuk</strong>  @btmpl - <time>18th Decemeber</time>
+    <strong>Aleksander Walczuk</strong>@contact.pl - 
+    <time>{(new Date()).toString()}</time>
     <p>
-      Hello World!
+      Hello world!
     </p>
   </div>
-,document.getElementById('root'))
+)
+
+ReactDOM.render(
+  <Tweet />
+, document.getElementById('root'))
 
 
 // If you want your app to work offline and load faster, you can change
