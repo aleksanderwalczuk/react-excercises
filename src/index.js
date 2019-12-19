@@ -4,6 +4,17 @@ import "./index.sass";
 import * as serviceWorker from "./serviceWorker";
 import PropTypes from "prop-types";
 
+class TweetForm extends React.Component {
+  render() {
+    return (
+      <div>
+        <input type="text" />
+        <button>Tweetuj!</button>
+      </div>
+    );
+  }
+}
+
 const TweetData = [
   {
     id: 1,
@@ -93,10 +104,13 @@ const TweetList = ({ tweets }) => {
 };
 TweetList.propTypes = {
   tweets: PropTypes.arrayOf(PropTypes.object)
-}
+};
 
 ReactDOM.render(
-  <TweetList tweets={TweetData} />,
+  <div>
+    <TweetForm />
+    <TweetList tweets={TweetData} />
+  </div>,
   document.getElementById("root")
 );
 
